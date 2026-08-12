@@ -1,160 +1,241 @@
-/* Estilos Generales */
+/* =========================================
+   ESTILOS GENERALES
+   ========================================= */
 body {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
-    background-color: #000000;
+    background-color: #000000; /* Fondo negro base */
     color: #ffffff;
     overflow-x: hidden;
 }
 
-/* Efecto de texto estilo neón/glitch */
-.titulo-neon {
-    font-family: 'Montserrat', sans-serif;
-    font-style: italic;
-    font-size: 3.5rem;
-    text-align: center;
-    line-height: 1.1;
-    text-transform: uppercase;
-    text-shadow: 3px 3px 0px #00ffff, -3px -3px 0px #ff00ff;
-    margin-bottom: 20px;
-}
-
-/* Sección Hero (Inicio) */
+/* =========================================
+   SECCIÓN HERO (INICIO)
+   ========================================= */
 .hero {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-image: radial-gradient(circle, #1a1a1a 0%, #000000 80%);
+    
+    /* Aquí va tu imagen de fondo animada del anillo */
+    background-color: #000000;
+    background-image: url('mi-fondo-animado.gif'); 
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    
     padding: 20px;
+    position: relative;
 }
 
+/* Efecto oscuro sobre el GIF para resaltar el texto */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 0;
+}
+
+.logo-libro {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 20px;
+}
+
+/* Efecto Glitch / Neón exacto del video (Cian y Magenta) */
+.titulo-neon {
+    font-family: 'Montserrat', sans-serif;
+    font-style: italic;
+    font-size: 4rem;
+    text-align: center;
+    line-height: 1.1;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-shadow: 4px 4px 0px #00ffff, -4px -4px 0px #ff00ff; /* Colores exactos del video */
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Botón comenzar en rojo exacto */
 .btn-comenzar {
-    color: red; 
-    font-size: 1.5rem; 
-    text-decoration: none; 
-    margin-top: 20px; 
-    font-weight: bold; 
-    border-bottom: 2px solid red;
+    color: #ff0000;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    text-decoration: none;
+    margin-top: 10px;
+    font-weight: 900;
+    font-style: italic;
+    letter-spacing: 5px;
+    border-bottom: 3px solid #ff0000; /* Línea inferior roja */
+    position: relative;
+    z-index: 1;
+    transition: transform 0.2s;
 }
 
-/* Contenedores de las secciones */
+.btn-comenzar:hover {
+    transform: scale(1.1);
+}
+
+/* =========================================
+   SECCIONES DE CONTENIDO
+   ========================================= */
 .seccion {
-    padding: 60px 20px;
-    background-color: #05051c;
-    border-top: 2px solid #333;
+    padding: 70px 20px;
+    /* Degradado azul/morado oscuro idéntico al fondo del video */
+    background: linear-gradient(135deg, #070719 0%, #121233 100%);
+    border-top: 1px solid #222;
 }
 
+/* Para las secciones que vuelven a ser completamente negras */
 .seccion-oscura {
-    background-color: #000;
+    background: #000000;
 }
 
+/* Títulos celestes/cyan de las secciones */
 .seccion-titulo {
     font-family: 'Montserrat', sans-serif;
-    color: #8c8cff;
+    color: #8be9fd; /* Color celeste claro del video */
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 40px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-}
-
-.titulo-seleccionar {
-    color: white; 
-    text-shadow: none; 
-    letter-spacing: 5px;
-}
-
-.titulo-nosotros {
-    color: #ff5555;
-}
-
-/* Cuadrícula de productos (Seleccionar) */
-.grid-productos {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.tarjeta-producto {
-    background-color: #ffffff;
-    color: #000;
-    padding: 15px;
-    border-radius: 8px;
-    text-align: center;
-    width: 200px;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-}
-
-.tarjeta-producto:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
-}
-
-.tarjeta-producto h3 {
-    margin: 10px 0 0 0;
-    font-size: 1.2rem;
-    color: #d10000;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.9);
     text-transform: uppercase;
+    font-style: italic;
+    font-weight: 900;
 }
 
-.texto-inferior {
-    text-align: center; 
-    margin-top: 30px; 
-    font-style: italic; 
-    font-size: 1.2rem;
+/* El título de "Sobre nosotros" es rojo en el video */
+.seccion-titulo[style*="color: #ff5555;"] {
+    color: #ff0000 !important;
 }
 
-/* Botón Flotante de WhatsApp */
-.whatsapp-btn {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #25D366;
-    color: white;
-    padding: 15px;
-    border-radius: 50%;
-    text-decoration: none;
-    font-weight: bold;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-    z-index: 1000;
-    font-size: 24px;
-}
-
-/* Sección de información a dos columnas */
+/* Contenedores de texto a dos columnas */
 .info-container {
     display: flex;
     flex-wrap: wrap;
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
-    gap: 20px;
+    gap: 40px;
     align-items: center;
-}
-
-.contenedor-centrado {
-    text-align: center; 
-    display: block;
+    justify-content: center;
 }
 
 .info-texto {
     flex: 1;
     min-width: 300px;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     line-height: 1.6;
+    color: #ffffff; /* Texto en blanco puro */
 }
 
+/* =========================================
+   SECCIÓN: ¿QUÉ PUEDE ADQUIRIR? (TARJETAS)
+   ========================================= */
+.grid-productos {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.tarjeta-producto {
+    background-color: #ffffff; /* Fondo blanco exacto del video */
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+}
+
+.tarjeta-producto:hover {
+    transform: translateY(-10px);
+}
+
+.titulo-rojo {
+    font-family: 'Montserrat', sans-serif;
+    color: #ff0000; /* Letras rojas exactas del video */
+    font-size: 2.2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 15px 0 5px 0;
+}
+
+/* =========================================
+   LISTAS Y TEXTOS
+   ========================================= */
+ul {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    font-style: italic;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+ul li {
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+/* Cajas de imagen temporales */
 .caja-placeholder {
     width: 100%;
     height: 200px;
-    background-color: #2a2a2a;
+    background-color: #1a1a1a;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #777;
+    color: #555;
     margin-bottom: 15px;
+    border: 2px dashed #444;
+}
+
+/* =========================================
+   SECCIÓN VIDEO TUTORIAL
+   ========================================= */
+.contenedor-video {
+    max-width: 900px;
+    margin: 0 auto;
+    border: 2px solid #333;
+    background-color: #000;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+}
+
+/* =========================================
+   BOTÓN FLOTANTE WHATSAPP
+   ========================================= */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25D366;
+    color: white;
+    padding: 15px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+    z-index: 1000;
+    transition: transform 0.3s;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.15);
 }
