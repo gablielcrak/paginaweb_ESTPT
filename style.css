@@ -20,9 +20,9 @@ body {
     align-items: center;
     justify-content: center;
     
-    /* Aquí va tu imagen de fondo animada del anillo */
+    /* Fondo animado para el inicio */
     background-color: #000000;
-    background-image: url('mi-fondo-animado.gif'); 
+    background-image: url('img/fondo_negro.gif'); 
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -31,7 +31,7 @@ body {
     position: relative;
 }
 
-/* Efecto oscuro sobre el GIF para resaltar el texto */
+/* Efecto oscuro sobre el fondo de inicio para resaltar el texto */
 .hero::before {
     content: "";
     position: absolute;
@@ -49,7 +49,7 @@ body {
     margin-bottom: 20px;
 }
 
-/* Efecto Glitch / Neón exacto del video (Cian y Magenta) */
+/* Efecto Glitch / Neón exacto (Cian y Magenta) */
 .titulo-neon {
     font-family: 'Montserrat', sans-serif;
     font-style: italic;
@@ -58,7 +58,7 @@ body {
     line-height: 1.1;
     text-transform: uppercase;
     color: #ffffff;
-    text-shadow: 4px 4px 0px #00ffff, -4px -4px 0px #ff00ff; /* Colores exactos del video */
+    text-shadow: 4px 4px 0px #00ffff, -4px -4px 0px #ff00ff;
     margin-bottom: 20px;
     position: relative;
     z-index: 1;
@@ -89,20 +89,25 @@ body {
    ========================================= */
 .seccion {
     padding: 70px 20px;
-    /* Degradado azul/morado oscuro idéntico al fondo del video */
-    background: linear-gradient(135deg, #070719 0%, #121233 100%);
+    /* Imagen de fondo azul para las secciones que lo requieran */
+    background-image: url('img/fondo_azul.jpg');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
     border-top: 1px solid #222;
 }
 
-/* Para las secciones que vuelven a ser completamente negras */
+/* Secciones oscuras por defecto (como "Sobre nosotros") */
 .seccion-oscura {
-    background: #000000;
+    background-color: #000000 !important; /* Fuerza el color negro */
+    background-image: none !important;    /* Quita la imagen de fondo azul */
+    border-top: none;
 }
 
 /* Títulos celestes/cyan de las secciones */
 .seccion-titulo {
     font-family: 'Montserrat', sans-serif;
-    color: #8be9fd; /* Color celeste claro del video */
+    color: #8be9fd; /* Color celeste claro */
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 40px;
@@ -112,9 +117,12 @@ body {
     font-weight: 900;
 }
 
-/* El título de "Sobre nosotros" es rojo en el video */
-.seccion-titulo[style*="color: #ff5555;"] {
+/* El título de "Sobre nosotros" es rojo */
+.titulo-rojo-nosotros {
     color: #ff0000 !important;
+    font-style: italic;
+    font-weight: 900;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 /* Contenedores de texto a dos columnas */
@@ -133,12 +141,20 @@ body {
     min-width: 300px;
     font-size: 1.2rem;
     line-height: 1.6;
-    color: #ffffff; /* Texto en blanco puro */
+    color: #ffffff;
 }
 
 /* =========================================
    SECCIÓN: ¿QUÉ PUEDE ADQUIRIR? (TARJETAS)
    ========================================= */
+#adquirir {
+    /* Le aplicamos tu fondo animado a esta sección */
+    background-image: url('img/fondo_negro.gif') !important;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .grid-productos {
     display: flex;
     justify-content: center;
@@ -149,7 +165,7 @@ body {
 }
 
 .tarjeta-producto {
-    background-color: #ffffff; /* Fondo blanco exacto del video */
+    background-color: #ffffff; /* Fondo blanco de las tarjetas */
     padding: 15px;
     border-radius: 10px;
     text-align: center;
@@ -164,11 +180,20 @@ body {
 
 .titulo-rojo {
     font-family: 'Montserrat', sans-serif;
-    color: #ff0000; /* Letras rojas exactas del video */
+    color: #ff0000; 
     font-size: 2.2rem;
     font-weight: 900;
     text-transform: uppercase;
     margin: 15px 0 5px 0;
+}
+
+/* Estilo para que las imágenes de los productos encajen bien */
+.img-producto {
+    width: 100%;
+    height: 250px;
+    object-fit: cover; /* Hace que la imagen llene el espacio sin deformarse */
+    border-radius: 8px; 
+    display: block;
 }
 
 /* =========================================
@@ -188,19 +213,6 @@ ul li {
 
 p {
     margin-bottom: 15px;
-}
-
-/* Cajas de imagen temporales */
-.caja-placeholder {
-    width: 100%;
-    height: 200px;
-    background-color: #1a1a1a;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #555;
-    margin-bottom: 15px;
-    border: 2px dashed #444;
 }
 
 /* =========================================
