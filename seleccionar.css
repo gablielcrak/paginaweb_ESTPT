@@ -1,5 +1,5 @@
 /* =========================================
-   ESTILOS GENERALES Y RESET
+   1. RESET Y ESTILOS GENERALES
    ========================================= */
 * {
     box-sizing: border-box;
@@ -15,11 +15,11 @@ body {
 }
 
 /* =========================================
-   SECCIÓN SUPERIOR: "SELECCIONAR" (CON GIF)
+   2. SECCIÓN SUPERIOR "SELECCIONAR" (CON GIF)
    ========================================= */
 .seccion-top-seleccionar {
     background-color: #000000;
-    /* GIF de fondo animado */
+    /* Fondo animado con GIF */
     background-image: url('img/fondo_negro2.gif');
     background-size: cover;
     background-position: center;
@@ -65,15 +65,27 @@ body {
     line-height: 1.3;
 }
 
+/* Imagen superior para categoría */
+.img-top {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border: 2px solid #ffffff;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.6);
+}
+
+/* Cuadro gris reservado (si no hay foto) */
 .img-placeholder-top {
     width: 100%;
     height: 180px;
-    background-color: rgba(26, 26, 26, 0.8); /* Ligeramente transparente para que luzca el GIF de fondo */
+    background-color: rgba(26, 26, 26, 0.85);
     border: 2px solid #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 4px;
+    font-size: 2rem;
 }
 
 .texto-personalizado {
@@ -84,15 +96,15 @@ body {
     line-height: 1.4;
     text-decoration: underline;
     margin-top: 15px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
 }
 
 /* =========================================
-   SECCIONES DE CATÁLOGO (FONDO AZUL)
+   3. SECCIONES DE CATÁLOGO (FONDO AZUL PATRÓN)
    ========================================= */
 .seccion-catalogo-fondo {
     background-color: #12132b;
-    /* Patrón de rombos azules */
+    /* Patrón geométrico de rombos azules */
     background-image: 
         linear-gradient(135deg, #1b1d42 25%, transparent 25%), 
         linear-gradient(225deg, #1b1d42 25%, transparent 25%), 
@@ -140,7 +152,9 @@ body {
     margin-top: 5px;
 }
 
-/* Grillas de productos */
+/* =========================================
+   4. GRILLAS E IMÁGENES DE PRODUCTOS
+   ========================================= */
 .grid-3-columnas {
     display: flex;
     justify-content: center;
@@ -164,6 +178,22 @@ body {
     align-items: center;
 }
 
+/* Estilo para imágenes reales de productos */
+.img-producto-catalogo {
+    width: 100%;
+    min-width: 200px;
+    height: 240px;
+    object-fit: cover;
+    border: 2px solid #ffffff;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+}
+
+.img-producto-catalogo.alto {
+    height: 340px;
+}
+
+/* Estilo para rectángulos grises temporales */
 .img-placeholder-catalogo {
     width: 100%;
     min-width: 200px;
@@ -176,6 +206,7 @@ body {
     color: #cccccc;
     font-size: 1.1rem;
     object-fit: cover;
+    border-radius: 4px;
 }
 
 .img-placeholder-catalogo.alto {
@@ -200,7 +231,7 @@ body {
 }
 
 /* =========================================
-   BOTÓN INFERIOR DE WHATSAPP
+   5. BOTÓN INFERIOR DE WHATSAPP
    ========================================= */
 .contenedor-btn-inferior {
     background-color: #12132b;
@@ -224,14 +255,56 @@ body {
     align-items: center;
     border: 2px solid #ffffff;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 .btn-whatsapp-largo:hover {
     transform: scale(1.05);
+    background-color: #00e676;
 }
 
 .btn-whatsapp-largo .flecha {
     margin-right: 12px;
     font-size: 1.8rem;
+}
+
+/* =========================================
+   6. ADAPTABILIDAD PARA CELULARES
+   ========================================= */
+@media (max-width: 768px) {
+    .titulo-seleccionar {
+        font-size: 2.8rem;
+    }
+
+    .titulo-producto {
+        font-size: 2.5rem;
+    }
+
+    .numero-rojo-grande {
+        font-size: 4rem;
+    }
+
+    .texto-personalizado {
+        font-size: 1.3rem;
+    }
+
+    .grid-categorias-top {
+        gap: 15px;
+    }
+
+    .cat-item {
+        width: 130px;
+    }
+
+    .img-top, .img-placeholder-top {
+        height: 140px;
+    }
+
+    .subtexto-disponible {
+        font-size: 1.8rem;
+    }
+
+    .contenedor-btn-inferior {
+        justify-content: center;
+    }
 }
