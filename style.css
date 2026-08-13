@@ -1,253 +1,263 @@
 /* =========================================
-   ESTILOS GENERALES
+   1. RESET Y ESTILOS GLOBALES
    ========================================= */
-body {
+* {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Arial', sans-serif;
-    background-color: #000000; /* Fondo negro base */
+}
+
+body {
+    background-image: url('img/fondo_azul.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Mantiene el fondo azul fijo al hacer scroll */
+    background-repeat: no-repeat;
     color: #ffffff;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
     overflow-x: hidden;
 }
 
 /* =========================================
-   SECCIÓN HERO (INICIO)
+   2. SECCIÓN HERO (PORTADA PRINCIPAL)
    ========================================= */
 .hero {
     min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75); /* Capa oscura sobre el fondo azul */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
-    /* Fondo animado para el inicio */
-    background-color: #000000;
-    background-image: url('img/fondo_negro.gif'); 
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    
-    padding: 20px;
-    position: relative;
+    padding: 40px 20px;
+    text-align: center;
 }
 
-/* Efecto oscuro sobre el fondo de inicio para resaltar el texto */
-.hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.3);
-    z-index: 0;
+.logo-libro img {
+    max-width: 100%;
+    height: auto;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
 }
 
-.logo-libro {
-    position: relative;
-    z-index: 1;
-    margin-bottom: 20px;
-}
-
-/* Efecto Glitch / Neón exacto (Cian y Magenta) */
+/* EFECTO NEÓN PARA EL TÍTULO PRINCIPAL */
 .titulo-neon {
     font-family: 'Montserrat', sans-serif;
-    font-style: italic;
-    font-size: 4rem;
-    text-align: center;
-    line-height: 1.1;
-    text-transform: uppercase;
-    color: #ffffff;
-    text-shadow: 4px 4px 0px #00ffff, -4px -4px 0px #ff00ff;
-    margin-bottom: 20px;
-    position: relative;
-    z-index: 1;
-}
-
-/* Botón comenzar en rojo exacto */
-.btn-comenzar {
-    color: #ff0000;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.8rem;
-    text-decoration: none;
-    margin-top: 10px;
+    font-size: 3.8rem;
     font-weight: 900;
     font-style: italic;
-    letter-spacing: 5px;
-    border-bottom: 3px solid #ff0000; /* Línea inferior roja */
-    position: relative;
-    z-index: 1;
-    transition: transform 0.2s;
+    color: #ffffff;
+    line-height: 1.1;
+    text-transform: uppercase;
+    margin-bottom: 35px;
+    letter-spacing: 2px;
+    text-shadow: 
+        0 0 5px #ffffff,
+        0 0 10px #ffffff,
+        0 0 20px #ff0000,
+        0 0 30px #ff0000,
+        0 0 40px #ff0000;
+}
+
+/* BOTÓN C O M E N Z A R */
+.btn-comenzar {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #ff0000;
+    text-decoration: underline;
+    letter-spacing: 6px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+    display: inline-block;
 }
 
 .btn-comenzar:hover {
+    color: #ffffff;
     transform: scale(1.1);
+    text-shadow: 
+        0 0 10px #ff0000,
+        0 0 20px #ff0000,
+        0 0 30px #ff0000;
 }
 
 /* =========================================
-   SECCIONES DE CONTENIDO
+   3. SECCIONES Y CONTENEDORES
    ========================================= */
 .seccion {
-    padding: 70px 20px;
-    /* Imagen de fondo azul para las secciones que lo requieran */
-    background-image: url('img/fondo_azul.jpg');
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
-    border-top: 1px solid #222;
+    padding: 60px 20px;
+    max-width: 1100px;
+    margin: 30px auto;
+    background-color: rgba(0, 0, 0, 0.85); /* Fondo negro translúcido sobre el fondo azul */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
 }
 
-/* Secciones oscuras por defecto (como "Sobre nosotros") */
 .seccion-oscura {
-    background-color: #000000 !important; /* Fuerza el color negro */
-    background-image: none !important;    /* Quita la imagen de fondo azul */
-    border-top: none;
+    background-color: rgba(0, 0, 0, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Títulos celestes/cyan de las secciones */
 .seccion-titulo {
     font-family: 'Montserrat', sans-serif;
-    color: #8be9fd; /* Color celeste claro */
+    font-size: 2.3rem;
+    font-weight: 900;
+    font-style: italic;
+    color: #ffffff;
     text-align: center;
-    font-size: 2.5rem;
     margin-bottom: 40px;
-    text-shadow: 2px 2px 5px rgba(0,0,0,0.9);
     text-transform: uppercase;
-    font-style: italic;
-    font-weight: 900;
+    letter-spacing: 1px;
 }
 
-/* El título de "Sobre nosotros" es rojo */
-.titulo-rojo-nosotros {
+.titulo-rojo, .titulo-rojo-nosotros {
     color: #ff0000 !important;
-    font-style: italic;
-    font-weight: 900;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    text-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
 }
 
-/* Contenedores de texto a dos columnas */
+/* CONTENEDOR FLEXIBLE PARA TEXTO E IMÁGENES */
 .info-container {
     display: flex;
-    flex-wrap: wrap;
-    max-width: 1100px;
-    margin: 0 auto;
-    gap: 40px;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
 .info-texto {
     flex: 1;
-    min-width: 300px;
-    font-size: 1.2rem;
-    line-height: 1.6;
-    color: #ffffff;
-}
-
-/* =========================================
-   SECCIÓN: ¿QUÉ PUEDE ADQUIRIR? (TARJETAS)
-   ========================================= */
-#adquirir {
-    /* Le aplicamos tu fondo animado a esta sección */
-    background-image: url('img/fondo_negro.gif') !important;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.grid-productos {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-.tarjeta-producto {
-    background-color: #ffffff; /* Fondo blanco de las tarjetas */
-    padding: 15px;
-    border-radius: 10px;
-    text-align: center;
-    width: 300px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-    transition: transform 0.3s ease;
-}
-
-.tarjeta-producto:hover {
-    transform: translateY(-10px);
-}
-
-.titulo-rojo {
-    font-family: 'Montserrat', sans-serif;
-    color: #ff0000; 
-    font-size: 2.2rem;
-    font-weight: 900;
-    text-transform: uppercase;
-    margin: 15px 0 5px 0;
-}
-
-/* Estilo para que las imágenes de los productos encajen bien */
-.img-producto {
-    width: 100%;
-    height: 250px;
-    object-fit: cover; /* Hace que la imagen llene el espacio sin deformarse */
-    border-radius: 8px; 
-    display: block;
-}
-
-/* =========================================
-   LISTAS Y TEXTOS
-   ========================================= */
-ul {
+    min-width: 280px;
     font-size: 1.1rem;
-    line-height: 1.8;
-    font-style: italic;
-    font-weight: bold;
-    color: #ffffff;
+    line-height: 1.7;
+    color: #dddddd;
 }
 
-ul li {
-    margin-bottom: 20px;
+.info-texto p {
+    margin-bottom: 15px;
 }
 
-p {
+.info-texto ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+.info-texto li {
     margin-bottom: 15px;
 }
 
 /* =========================================
-   SECCIÓN VIDEO TUTORIAL
+   4. GRILLA DE PRODUCTOS (¿QUÉ PUEDE ADQUIRIR?)
    ========================================= */
-.contenedor-video {
-    max-width: 900px;
-    margin: 0 auto;
-    border: 2px solid #333;
-    background-color: #000;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+.grid-productos {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.tarjeta-producto {
+    background-color: #141414;
+    border: 2px solid #333333;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    width: 280px;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    display: block;
+}
+
+.tarjeta-producto:hover {
+    transform: translateY(-8px);
+    border-color: #ff0000;
+    box-shadow: 0 10px 20px rgba(255, 0, 0, 0.5);
+}
+
+.img-producto {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #222222;
+}
+
+.tarjeta-producto h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 900;
+    margin-top: 10px;
 }
 
 /* =========================================
-   BOTÓN FLOTANTE WHATSAPP
+   5. CONTENEDOR DE VIDEO TUTORIAL
+   ========================================= */
+.contenedor-video {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    border: 2px solid #333333;
+}
+
+.contenedor-video iframe {
+    display: block;
+    border: none;
+}
+
+/* =========================================
+   6. BOTÓN FLOTANTE WHATSAPP
    ========================================= */
 .whatsapp-btn {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: #25D366;
-    color: white;
-    padding: 15px;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25d366;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
     z-index: 1000;
-    transition: transform 0.3s;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .whatsapp-btn:hover {
     transform: scale(1.15);
+    background-color: #20ba5a;
+}
+
+/* =========================================
+   7. ADAPTABILIDAD EN MÓVILES (RESPONSIVE)
+   ========================================= */
+@media (max-width: 768px) {
+    .titulo-neon {
+        font-size: 2.5rem;
+    }
+
+    .btn-comenzar {
+        font-size: 1.6rem;
+        letter-spacing: 4px;
+    }
+
+    .seccion-titulo {
+        font-size: 1.7rem;
+    }
+
+    .info-container {
+        flex-direction: column;
+    }
+
+    .tarjeta-producto {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .contenedor-video iframe {
+        height: 300px;
+    }
 }
