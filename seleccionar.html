@@ -4,108 +4,150 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seleccionar - Innovador TEC</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,900;1,900&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
+    <!-- Fuente Montserrat para coincidir con tu diseño -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="seleccionar.css">
 </head>
 <body>
 
-    <div class="seccion-top-seleccionar">
+    <!-- SECCIÓN SUPERIOR CON FONDO ANIMADO/PIXELATED -->
+    <header class="seccion-header">
         <h1 class="titulo-seleccionar">SELECCIONAR</h1>
         
+        <!-- Tarjetas de categorías superiores -->
         <div class="grid-categorias-top">
-            <div class="cat-item">
-                <img src="img/3D.jpg" alt="Diseño 3D" class="img-top">
-                <h3>Diseño 3D</h3>
-            </div>
-            <div class="cat-item">
-                <img src="img/Taza.jpg" alt="Tazas" class="img-top">
-                <h3>taza<br>personalizadas</h3>
-            </div>
-            <div class="cat-item">
-                <img src="img/llavero.jpg" alt="Llaveros" class="img-top">
-                <h3>llaveros</h3>
-            </div>
+            <a href="#sec-3d" class="tarjeta-cat">
+                <div class="img-box"><img src="img/3D.jpg" alt="Diseño 3D"></div>
+                <p>Diseño 3D</p>
+            </a>
+            <a href="#sec-tazas" class="tarjeta-cat">
+                <div class="img-box"><img src="img/Taza.jpg" alt="Tazas"></div>
+                <p>taza<br>personalizadas</p>
+            </a>
+            <a href="#sec-llaveros" class="tarjeta-cat">
+                <div class="img-box"><img src="img/llavero.jpg" alt="Llaveros"></div>
+                <p>llaveros</p>
+            </a>
         </div>
 
-        <p class="texto-personalizado">todo totalmente personalizado a tu gusto<br>enviarnos tu foto o imagen de cualquier tipo</p>
-    </div>
+        <div class="texto-instrucciones">
+            <p>todo totalmente personalizado a tu gusto</p>
+            <p>enviarnos tu foto o imagen de cualquier tipo</p>
+        </div>
+    </header>
 
-    <div class="seccion-catalogo-fondo">
-        <div class="encabezado-catalogo">
-            <div style="display:flex; flex-direction:column; align-items:flex-start;">
-                <h2 class="titulo-producto">Diseño 3D</h2>
-                <span class="subtexto-blanco">(contáctanos para tu Diseño en 3D personalizado)</span>
-            </div>
-            <span class="numero-rojo-grande">1</span>
-        </div>
-        
-        <div class="grid-3-columnas">
-            <div class="item-producto">
-                <img src="img/3D01.jpg" alt="Diseño 3D 1" class="img-producto-catalogo alto">
-                <p class="numero-debajo">1</p>
-            </div>
-            <div class="item-producto">
-                <img src="img/3D02.jpg" alt="Diseño 3D 2" class="img-producto-catalogo alto">
-                <p class="numero-debajo">2</p>
-            </div>
-            <div class="item-producto">
-                <img src="img/3D03.png" alt="Diseño 3D 3" class="img-producto-catalogo alto">
-                <p class="numero-debajo">3</p>
-            </div>
-        </div>
-        <h3 class="subtexto-disponible">disponible hasta ahora</h3>
-    </div>
+    <!-- CUERPO DEL CATÁLOGO CON FONDO DE PATRÓN CHEVRON (FONDO AZUL) -->
+    <main class="seccion-catalogo-body">
 
-    <div class="seccion-catalogo-fondo">
-        <div class="encabezado-catalogo">
-            <h2 class="titulo-producto">taza-personalizadas</h2>
-            <span class="numero-rojo-grande">2</span>
-        </div>
-        
-        <div class="grid-3-columnas">
-            <div class="item-producto">
-                <img src="img/taza01.jpg" alt="Taza 1" class="img-producto-catalogo">
-                <p class="numero-debajo">1</p>
+        <!-- SECCIÓN 1: DISEÑO 3D -->
+        <section class="bloque-categoria" id="sec-3d">
+            <div class="encabezado-bloque">
+                <div class="titulos-izquierda">
+                    <h2>Diseño 3D</h2>
+                    <p class="subtexto">(contáctanos para tu Diseño en 3D personalizado)</p>
+                </div>
+                <span class="numero-rojo">1</span>
             </div>
-            <div class="item-producto">
-                <img src="img/taza02.jpg" alt="Taza 2" class="img-producto-catalogo">
-                <p class="numero-debajo">2</p>
-            </div>
-            <div class="item-producto">
-                <img src="img/taza03.jpg" alt="Taza 3" class="img-producto-catalogo">
-                <p class="numero-debajo">3</p>
-            </div>
-        </div>
-    </div>
 
-    <div class="seccion-catalogo-fondo">
-        <div class="encabezado-catalogo">
-            <h2 class="titulo-producto">tambien ofrecemos llavero<br>personalizado</h2>
-            <span class="numero-rojo-grande">3</span>
-        </div>
-        
-        <div class="grid-3-columnas">
-            <div class="item-producto">
-                <img src="img/llavero01.jpg" alt="Llavero 1" class="img-producto-catalogo">
-                <p class="numero-debajo">1</p>
+            <div class="grid-3d">
+                <div class="fila-superior">
+                    <div class="item-producto">
+                        <div class="marco-img">
+                            <img src="img/3D01.jpg" alt="Diseño 3D 1">
+                        </div>
+                        <span class="num-item">1</span>
+                    </div>
+                    <div class="item-producto">
+                        <div class="marco-img">
+                            <img src="img/3D02.jpg" alt="Diseño 3D 2">
+                        </div>
+                        <span class="num-item">2</span>
+                    </div>
+                </div>
+                <div class="fila-inferior">
+                    <div class="item-producto">
+                        <div class="marco-img">
+                            <img src="img/3D03.png" alt="Diseño 3D 3">
+                        </div>
+                        <span class="num-item">3</span>
+                    </div>
+                </div>
             </div>
-            <div class="item-producto">
-                <img src="img/llavero02.jpg" alt="Llavero 2" class="img-producto-catalogo">
-                <p class="numero-debajo">2</p>
-            </div>
-            <div class="item-producto">
-                <img src="img/llavero03.jpg" alt="Llavero 3" class="img-producto-catalogo">
-                <p class="numero-debajo">3</p>
-            </div>
-        </div>
-    </div>
 
-    <div class="contenedor-btn-inferior">
-        <a href="https://wa.me/51938500836" class="btn-whatsapp-largo" target="_blank">
-            <span class="flecha">←</span> CLICK AL ICONO
-            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" width="30px" style="margin-left: 10px;">
-        </a>
-    </div>
+            <p class="texto-disponible">disponible hasta ahora</p>
+        </section>
+
+        <!-- SECCIÓN 2: TAZAS PERSONALIZADAS -->
+        <section class="bloque-categoria" id="sec-tazas">
+            <div class="encabezado-bloque">
+                <div class="titulos-izquierda">
+                    <h2>taza-personalizadas</h2>
+                </div>
+                <span class="numero-rojo">2</span>
+            </div>
+
+            <div class="grid-3-columnas">
+                <div class="item-producto">
+                    <div class="marco-img">
+                        <img src="img/taza01.jpg" alt="Taza 1">
+                    </div>
+                    <span class="num-item">1</span>
+                </div>
+                <div class="item-producto">
+                    <div class="marco-img">
+                        <img src="img/taza02.jpg" alt="Taza 2">
+                    </div>
+                    <span class="num-item">2</span>
+                </div>
+                <div class="item-producto">
+                    <div class="marco-img">
+                        <img src="img/taza03.jpg" alt="Taza 3">
+                    </div>
+                    <span class="num-item">3</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3: LLAVEROS -->
+        <section class="bloque-categoria" id="sec-llaveros">
+            <div class="encabezado-bloque">
+                <div class="titulos-izquierda">
+                    <h2>tambien ofrecemos llavero<br>personalizado</h2>
+                </div>
+                <span class="numero-rojo">3</span>
+            </div>
+
+            <div class="grid-3-columnas">
+                <div class="item-producto">
+                    <div class="marco-img">
+                        <img src="img/llavero01.jpg" alt="Llavero 1">
+                    </div>
+                    <span class="num-item">1</span>
+                </div>
+                <div class="item-producto">
+                    <div class="marco-img">
+                        <img src="img/llavero02.jpg" alt="Llavero 2">
+                    </div>
+                    <span class="num-item">2</span>
+                </div>
+                <div class="item-producto">
+                    <div class="marco-img">
+                        <img src="img/llavero03.jpg" alt="Llavero 3">
+                    </div>
+                    <span class="num-item">3</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- BOTÓN DE WHATSAPP AL FINAL -->
+        <div class="contenedor-btn-final">
+            <a href="https://wa.me/51938500836" class="btn-whatsapp-largo" target="_blank">
+                <span class="flecha">←</span> CLICK AL ICONO
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+            </a>
+        </div>
+
+    </main>
 
 </body>
 </html>
